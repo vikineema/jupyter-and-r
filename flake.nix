@@ -16,9 +16,6 @@
         IRkernel
       ]; 
     rEnv = rWrapper.override {packages = RPackages; };
-    setupRKernel = pkgs.writeShellScript "r-kernel-setup" ./r_kernel.sh;
-    setupUV = pkgs.writeShellScript "uv-setup" ./uv_setup.sh;
-
   in
   {
     devShells.${system}.default = pkgs.mkShell {
